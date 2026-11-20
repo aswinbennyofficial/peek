@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Peek",
+  "version": "1.0.3",
+  "description": "Alt/Option+click a link to preview it in a floating glance, Zen-style.",
+  "homepage_url": "https://github.com/aswinbennyofficial/peek",
+  "icons": { "48": "icons/icon.svg", "96": "icons/icon.svg" },
+  "permissions": ["webRequest", "webRequestBlocking", "<all_urls>", "tabs", "menus"],
+  "background": { "scripts": ["background.js"] },
+  "content_scripts": [{ "matches": ["<all_urls>"], "js": ["content.js"], "run_at": "document_start", "all_frames": true }],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "peek@aswinbennyofficial",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": { "required": ["none"] }
+    }
+  }
+}
